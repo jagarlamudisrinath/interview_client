@@ -76,7 +76,8 @@ class MicrophoneStream:
 
 def send_text_to_backend(transcript: str):
     """Send transcribed text to backend API and handle streaming response."""
-    api_url = "http://localhost:8000/api/v1/interviews/1/start"
+    api_url = "http://34.44.35.163:8000/api/v1/interviews/2/start"
+    #api_url = "http://10.0.0.189:8000/api/v1/interviews/1/start"
     headers = {'Content-Type': 'application/json'}
     payload = {'Question': transcript}  # Include the transcript in the payload
 
@@ -140,7 +141,7 @@ def listen_print_loop(responses: object) -> str:
 def main() -> None:
     """Transcribe speech from audio and send to backend."""
     language_code = "en-US"
-    client_file = '/Users/srinathjagarlamudi/PycharmProjects/ai-interviewee/xenon-poet-422719-t4-a4b630469f42.json'
+    client_file = '/home/nagalakshmi/Documents/projects/interview_client/xenon-poet-422719-t4-684af477d087.json'
     credentials = service_account.Credentials.from_service_account_file(client_file)
 
     client = speech.SpeechClient(credentials=credentials)
